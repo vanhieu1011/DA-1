@@ -95,20 +95,29 @@ body {
   left: 0;
 }
 
-
-#navbar{
+.timkiem{
+  padding-right: 450px;
+}
+.alo{
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-left: 17rem;
+  padding-bottom: 2rem;
 }
 
-#navbar li{
+#navbar{
+  padding-top: 0.7rem;
+  display: flex;
+  align-items: center;
+}
+
+#navbar  li{
   list-style: none;
   padding: 0 20px;
   position: relative;
 }
 
-#navbar li a{
+#navbar  li a{
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
@@ -143,7 +152,7 @@ body {
 
 #hero{
     background-image: url("img/hero4.png");
-    height: 90vh;
+    height: 60vh;
     width: 100%;
     background-size: cover;
     background-position: top 25% right 0;

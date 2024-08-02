@@ -27,7 +27,9 @@
             <nav class="sidebar bg-primary">
                 <ul>
                 <section id="header">
-                <a href="index.php"><img src="../LAYOUT/IMG/logo.jpg" alt="" width="100px" style="margin: 18px;"></a>
+                    <div class="tri-lol">
+                <a href="index.php"><img class="logo-sidebar" src="../LAYOUT/IMG/logo1-removebg-preview.png" alt=""  ></a>
+                    </div>
                 </section>
                     <li>
                         <a href="index.php"><i class="fa-solid fa-house ico-side"></i>Tổng quan</a>

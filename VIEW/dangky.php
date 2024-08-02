@@ -61,12 +61,20 @@
       <h3>Đăng ký</h3>
       
       <input type="text" id="fname" name="username" placeholder="Tên Đăng Nhập" required><br>
+      
+      <input type="text" id="fname" name="ten" placeholder="Tên của mày" required><br>
+
+      <input type="text" id="fname" name="dienthoai" placeholder="Số điện thoại" required><br>
+      
+      <input type="text" id="fname" name="diachi" placeholder="Địa chỉ" required><br>
+
 
       <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required><br>
 
       <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Xác nhận mật khẩu" required><br>
 
       <input type="email" id="lname" name="email" placeholder="Nhập email của bạn" required><br>
+      
 
       <!-- <select name="user_type" required>
          <option value="0">Người dùng</option>

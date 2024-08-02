@@ -136,11 +136,11 @@
                         $pttt=$_POST['pttt'];
                     
                         // insert use mới
-                        $username="n2tshop".rand(1,999);
+                        $username="epic-foot".rand(1,999);
                         $password="123456";
                         $iduser=user_insert_id($username, $password, $hoten, $diachi, $dienthoai, $email);
                         // tạo don hang
-                        $madh="n2tshop".$iduser."-".date("His-dmY");
+                        $madh="epicfoot".$iduser."-".date("His-dmY");
                         $total=get_tongdonhang();
                         $ship=0;
                         if(isset($_SESSION['giatrivoucher'])){
@@ -181,6 +181,8 @@
                     # xác định gái trị đầu vào
                     if (isset($_POST['dangky'])&&($_POST['dangky'])) {
                         $ten=$_POST['ten'];
+                        $dienthoai =$_POST['dienthoai'];
+                        $diachi = $_POST['diachi'];
                         $username=$_POST["username"];
                         $password=$_POST["password"];
                         $email=$_POST["email"];
