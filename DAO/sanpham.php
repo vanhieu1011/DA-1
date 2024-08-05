@@ -30,7 +30,7 @@
 
 
 function get_dssp_new(){
-    $sql = "SELECT * FROM sanpham ORDER BY id DESC" ; //$limi là lấy sản phẩm theeo yêu cầu
+    $sql = "SELECT * FROM sanpham ORDER BY id DESC limit 8" ; //$limi là lấy sản phẩm theeo yêu cầu
     return pdo_query($sql);
 }
 function get_dssp_admin(){
@@ -38,11 +38,11 @@ function get_dssp_admin(){
     return pdo_query($sql);
 }
 function get_dssp_best(){
-    $sql = "SELECT * FROM sanpham WHERE bestseller=1 ORDER BY id DESC" ; //$limi là lấy sản phẩm theeo yêu cầu
+    $sql = "SELECT * FROM sanpham WHERE bestseller=1 ORDER BY id DESC limit 8 " ; //$limi là lấy sản phẩm theeo yêu cầu
     return pdo_query($sql);
 }
 function get_dssp_view(){
-    $sql = "SELECT * FROM sanpham ORDER BY view DESC" ; //$limi là lấy sản phẩm theeo yêu cầu
+    $sql = "SELECT * FROM sanpham ORDER BY view DESC limit 8" ; //$limi là lấy sản phẩm theeo yêu cầu
     return pdo_query($sql);
 }
 function get_dssp_splienquan($iddm,$id){
@@ -64,7 +64,7 @@ function showsp($dssp_new){
         <div class="pro" >         
         <a href="'.$link.'"><img src="./LAYOUT/img/'.$img.'" alt=""></a>
                     <div class="des">
-                        <span>adidas</span>
+                        <span>Lượt xem: '.$view.'</span>
                         <h5>'.$name.'</h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
@@ -119,14 +119,14 @@ function showsp_admin($dssp_new){
 }
 
 
-function get_dssp($kyw){
-    $sql ="SELECT * FROM sanpham WHERE 1";
-    if ($kyw!="") {
-        $sql .= " AND name like '%".$kyw."%'";  // thêm % để so sánh tương đương
-    }
-    $sql .="ORDER BY id DESC";
-    // return pdo_query($sql);
-}
+// function get_dssp($kyw){
+//     $sql ="SELECT * FROM sanpham WHERE 1";
+//     if ($kyw!="") {
+//         $sql .= " AND name like '%".$kyw."%'";  // thêm % để so sánh tương đương
+//     }
+//     $sql .="ORDER BY id DESC";
+//     // return pdo_query($sql);
+// }
 
 
 // function hang_hoa_exist($ma_hh){
@@ -189,4 +189,12 @@ function get_img($id){
 function get_sanphamchitiet($id){
     $sql = "SELECT * FROM sanpham WHERE id=?";
     return pdo_query_one($sql,$id);
+}
+function get_dssp($iddm,$limi){
+    $sql = "SELECT * FROM sanpham WHERE 1";
+    if($iddm>0){
+        $sql .=" AND iddm=".$iddm;
+    }
+    $sql .= " ORDER BY id DESC limit ".intval($limi);
+    return pdo_query($sql);
 }
