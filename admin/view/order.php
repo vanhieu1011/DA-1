@@ -5,7 +5,8 @@
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Mã Đơn hàng</th>
+                            <th>Thứ Tự Đơn hàng</th>
+                            <th>Mẫ Đơn hàng</th>
                             <th>ID người mua</th>
                             <th>Tên người đặt  </th>
                             <th>Email người đặt</th>
@@ -18,6 +19,7 @@
                             <th>Voucher</th>
                             <th>Tổng thanh toán</th>
                             <th>PTT</th>
+                            <p ></p>
                         </tr>
                     </thead>
                     <?php
@@ -26,7 +28,7 @@
 foreach ($kq as $donhang) {
     echo '<tr>
     <td>'.$i.'</td>
-    <td>'.$donhang['madh'].'</td>
+    <td>'.$donhang['id'].'</td>
     <td>'.$donhang['iduser'].'</td>
     <td>'.$donhang['nguoidat_ten'].'</td>
     <td>'.$donhang['nguoidat_email'].'</td>
@@ -43,10 +45,9 @@ foreach ($kq as $donhang) {
     
 
     <td>
-        <a href="#" class="btn btn-warning"><i
-                class="fa-solid fa-pen-to-square"></i> Sửa</a>
-                <a href="='.$donhang['id'].'" class="btn btn-danger"><i
-                class="fa-solid fa-trash"></i> Xóa</a>
+        <a href="index.php?pg=donhang_update.php&id='.$donhang['id'].'" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Sửa</a>
+        <a href="='.$donhang['id'].'" class="btn btn-danger"><i
+        class="fa-solid fa-trash"></i> Xóa</a>
     
     
     </tr>';
@@ -57,7 +58,8 @@ foreach ($kq as $donhang) {
  ?>
                     <tfoot>
                         <tr>
-                        <th> Mã Đơn hàng</th>
+                        <th> Thứ Tự Đơn hàng</th>
+                            <th> Mã Đơn hàng</th>
                             <th>ID người mua</th>
                             <th>Tên người đặt  </th>
                             <th>Email người đặt</th>

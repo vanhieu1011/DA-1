@@ -28,7 +28,7 @@
                 <ul>
                 <section id="header">
                     <div class="tri-lol">
-                <a href="index.php"><img class="logo-sidebar" src="../LAYOUT/IMG/logo1-removebg-preview.png" alt=""  ></a>
+                <a href="index.php"><img class="logo-sidebar" src="../LAYOUT/IMG/logo1-removebg-preview.png" alt="" width="200px"  style="background-color: white; margin-left: 10px" ></a>
                     </div>
                 </section>
                     <li>

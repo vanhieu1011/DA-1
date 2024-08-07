@@ -6,7 +6,6 @@
    include "../DAO/user.php";
    include "../DAO/donhang.php";
 
-
    include "view/header.php";
    if(isset($_GET['pg'])){
     $pg=$_GET['pg'];
@@ -172,6 +171,7 @@
                             $kq=user_select_all();
                             include "view/user.php";
                             break;
+                        
         default:
             include "view/home.php";
             break;
