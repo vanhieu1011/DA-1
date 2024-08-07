@@ -17,7 +17,7 @@
     </script>
     <link rel="stylesheet" href="layout2/assets/css/main.css">
     <script src="https://kit.fontawesome.com/8c204d0fdf.js" crossorigin="anonymous"></script>
-    <title>Admin Shop N2T</title>
+    <title>Admin Epic Shop</title>
 </head>
 
 <body>
@@ -27,9 +27,7 @@
             <nav class="sidebar bg-primary">
                 <ul>
                 <section id="header">
-                    <div class="tri-lol">
-                <a href="index.php"><img class="logo-sidebar" src="../LAYOUT/IMG/logo1-removebg-preview.png" alt=""  ></a>
-                    </div>
+                <a href="index.php"><img src="../LAYOUT/IMG/logo1-removebg-preview.png"></a>
                 </section>
                     <li>
                         <a href="index.php"><i class="fa-solid fa-house ico-side"></i>Tổng quan</a>

@@ -12,7 +12,21 @@
     $pg=$_GET['pg'];
     switch ($pg) {
         case 'sanphamlist':
-            $sanphamlist=get_dssp_new(100);
+            if(isset($_POST['timkiem'])){
+                $kyw=$_POST['kyw'];
+             }else{
+                $kyw="";
+             }
+             if(!isset($_GET['page'])){
+                $page=1;
+             }else{
+                $page=$_GET['page'];
+             }
+             $soluongsp=10;
+ 
+             $dssp=get_dssp_admin($kyw,$page,$soluongsp);
+             $tongsosp=get_dssp_new();
+             $hienthisotrang=hien_thi_so_trang($tongsosp,$soluongsp);
             include "view/sanphamlist.php";
             break;
             case 'updateproduct':
@@ -41,7 +55,21 @@
                 //
 
                 // show ds sp
-                $sanphamlist=get_dssp_new(100);
+                if(isset($_POST['timkiem'])){
+                    $kyw=$_POST['kyw'];
+                 }else{
+                    $kyw="";
+                 }
+                 if(!isset($_GET['page'])){
+                    $page=1;
+                 }else{
+                    $page=$_GET['page'];
+                 }
+                 $soluongsp=10;
+     
+                 $dssp=get_dssp_admin($kyw,$page,$soluongsp);
+                 $tongsosp=get_dssp_new();
+                 $hienthisotrang=hien_thi_so_trang($tongsosp,$soluongsp);
                 include "view/sanphamlist.php";
                 break;
         case 'sanphamadd':
@@ -164,6 +192,34 @@
                         }
                         include "view/user_add.php";
                         break;
+                        case 'useredit':
+                            if(isset($_GET['id'])&&($_GET['id']>0)){
+                                $id=$_GET['id'];
+                                $user=get_user($id);
+                            }
+                            include "view/useredit.php";
+                            break;
+                            case 'updateuser':
+                                // Kiểm tra và lấy dữ liệu
+                                if (isset($_POST['useredit'])) {
+                                    $username = $_POST['username'];
+                                    $password = $_POST['password'];
+                                    $ten = $_POST['ten'];
+                                    $diachi = $_POST['diachi'];
+                                    $email = $_POST['email'];
+                                    $dienthoai = $_POST['dienthoai'];
+                                    $role = $_POST['role'];
+                                    $id = $_POST['id'];
+                            
+                                    // Cập nhật thông tin người dùng
+                                    user_update($username, $ten, $password, $email, $diachi, $dienthoai, $role, $id);
+                            
+                                }
+                            
+                                // Hiển thị danh sách người dùng
+                                $kq=user_select_all();
+                                include "view/user.php";
+                                break;
                         case 'deluser':
                             if(isset($_GET['id'])&&($_GET['id']>0)){
                                 $id=$_GET['id'];
@@ -172,6 +228,9 @@
                             $kq=user_select_all();
                             include "view/user.php";
                             break;
+                       
+
+    
         default:
             include "view/home.php";
             break;

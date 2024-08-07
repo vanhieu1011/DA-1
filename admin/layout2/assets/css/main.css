@@ -31,26 +31,14 @@ body{
     padding-left: 0 !important;
 }
 
-.header {
-    background-color: #fafafa;
-    width: 100%;
-    position: fixed;
-    z-index: 1000;
-    height: 60px;
-    box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, .03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, .03), 0 0.25rem 0.53125rem rgba(4, 9, 20, .05), 0 0.125rem 0.1875rem rgba(4, 9, 20, .03);
-}
-
-#header{
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-
-}
-
-.logo-sidebar{
-    width: 128px;
-
-}
+ #header{
+    a{
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    }
+ }
 
 .app-main {
     width: 100%;
@@ -64,7 +52,7 @@ body{
     font-weight: 700;
     border-radius: 0px 5px 5px 0px;
     z-index: 20;
-    background-color: gray !important;
+    background-image: linear-gradient(90deg, whitesmoke, gray);
 }
 nav ul {
     padding: 0 !important;
@@ -76,13 +64,13 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #d4d4d4;
+    color: black;
     text-decoration: none;
     transition: ease-in-out .2s all;
 }
 
 nav ul li a:hover {
-    color: #d1d1d1;
+    color: blue;
 }
 
 .ico-side {
@@ -154,3 +142,86 @@ nav ul li a:hover {
     width: 500px;
     margin: 0 auto;
 }
+/* Form */
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Input */
+  .search input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 10px;
+    width: 200px;
+  }
+  
+  /* Button */
+  .search button[type="submit"] {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .search button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Class "r" */
+  .r {
+    border-radius: 50%;
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .r:hover {
+    background-color: #666;
+    transform: scale(1.1);
+  }
+  .phantrang {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .phantrang a {
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: 1px solid #b0baf5; /* Thêm border */
+    border-radius: 4px; /* Thêm border-radius */
+    margin: 0 2px; /* Thêm khoảng cách giữa các nút */
+  }
+
+  h5{
+    color: black;
+    font-weight: bolder;
+    
+  }
+  
+  h3{
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+  }
+
+  
+  
