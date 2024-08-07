@@ -33,10 +33,8 @@ function get_dssp_new(){
     $sql = "SELECT * FROM sanpham ORDER BY id DESC" ; //$limi là lấy sản phẩm theeo yêu cầu
     return pdo_query($sql);
 }
-function get_dssp_admin(){
-    $sql = "SELECT * FROM sanpham ORDER BY id DESC" ; //$limi là lấy sản phẩm theeo yêu cầu
-    return pdo_query($sql);
-}
+
+
 function get_dssp_best(){
     $sql = "SELECT * FROM sanpham WHERE bestseller=1 ORDER BY id DESC" ; //$limi là lấy sản phẩm theeo yêu cầu
     return pdo_query($sql);
@@ -89,6 +87,35 @@ function showsp($dssp_new){
     return $html_dssp_new;
 }
 //admin
+function hien_thi_so_trang($dssp,$soluongsp){
+    $tongsanpham=count($dssp);
+    $sotrang=ceil($tongsanpham/$soluongsp);
+    $html_sotrang="";
+    for ($i=1; $i <=$sotrang ; $i++) { 
+        $html_sotrang.='<a href="index.php?pg=sanphamlist&page='.$i.'">'.$i.'</a> ';
+    }
+    return $html_sotrang;
+}
+function get_dssp_admin($kyw,$page,$soluongsp){
+
+    // kiểm tra đang ở trang nào? tạo limit
+    // if(($page="")||($page=0)) $page=1;
+    
+    $batdau=($page-1)*$soluongsp;
+     
+
+    $sql = "SELECT * FROM sanpham WHERE 1";
+    if($kyw!=""){
+        $sql .= " AND name like ?";
+        $sql .= " ORDER BY id DESC";
+        $sql .= " LIMIT ".$batdau.",".$soluongsp;
+        return pdo_query($sql,"%".$kyw."%");
+    }else{
+        $sql .= " ORDER BY id DESC";
+        $sql .= " LIMIT ".$batdau.",".$soluongsp;
+        return pdo_query($sql);
+    }
+}
 function showsp_admin($dssp_new){
     $html_dssp_new='';
     $i=1;
