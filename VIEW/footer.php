@@ -13,10 +13,10 @@
 
         <footer class="section-p1">
             <div class="col">
-                <img class="logo" src="LAYOUT/img/logo.jpg" alt="" width="60px">
+                <img class="logo" src="LAYOUT/img/logo1-removebg-preview.png" alt="" width="60px">
                 <h4>Liên Hệ</h4>
-                <p><strong>Địa chỉ:</strong> Lý Thường Kiệt, Tân Tiến, LaGi, Bình Thuận</p>
-                <p><strong>Phone:</strong> +84 7722 2926/ (033 7742 075) </p>
+                <p><strong>Địa chỉ:</strong> 497 HT 17, phường Hiệp Thành, Quận 12, Tp HCM</p>
+                <p><strong>Phone:</strong> +84 399130014</p>
                 <p><strong>Giờ</strong> 06:00(AM) - 10:00(PM) Thứ 2 - CN hằng tuần</p>
                 <div class="follow">
                     <h4>Follow</h4>
@@ -58,7 +58,7 @@
             </div>
 
             <div class="copyright">
-                <p>2023 © Copyright N2T_Nguyễn Thành Tâm. All Rights Reserved.</p>
+                <p>2024 © Copyright epicfoot Phạm Văn Hiếu. All Rights Reserved.</p>
             </div>
         </footer>
 

@@ -12,7 +12,7 @@
             <h2>Uư đải siêu giá trị</h2>
             <h1>Trên tất cả các sản phẩm</h1>
             <p>Tiết kiệm nhiều hơn với phiếu giảm giá & lên tới 70%</p>
-            <button>Mua ngay</button>
+            <button><a href="index.php?pg=sanpham">Mua ngay</a></button>
         </section>
 
         <section id="feature" class="section-p1">

@@ -7,6 +7,7 @@
 
 
     include 'DAO/pdo.php';
+    include 'DAO/danhmuc.php';
     include 'DAO/sanpham.php';
     include 'DAO/giohang.php';
     include 'DAO/user.php';
@@ -22,18 +23,28 @@
     }else{
         switch ($_GET['pg']) {
             case 'sanpham':   
-                if(isset($_POST["timkiem"])&&($_POST["timkiem"])){
-                    $kyw=$_POST["kyw"];
+                // if(isset($_POST["timkiem"])&&($_POST["timkiem"])){
+                //     $kyw=$_POST["kyw"];
+                // }else{
+                //     $kyw="";
+                // }
+                // $dssp=get_dssp($kyw);
+                // include './VIEW/sanpham.php';
+                // break;
+                 $dsdm=danhmuc_all(); 
+                if(!isset($_GET['iddm'])){
+                    $iddm =0;
                 }else{
-                    $kyw="";
+                    $iddm =$_GET['iddm'];
+                    
                 }
-                $dssp=get_dssp($kyw);
+                $dssp=get_dssp($iddm,12);
                 include './VIEW/sanpham.php';
                 break;
             case 'sanphamchitiet':   
                 if (isset($_GET['idpro'])) {
                     $id=$_GET['idpro'];
-                    $spchitiet= get_sp_by_id($id);
+                     $spchitiet= get_sp_by_id($id);
                     $iddm=$spchitiet['iddm'];
                     $splienquan= get_dssp_splienquan($iddm,$id,4);
                     include './VIEW/sanphamchitiet.php';

@@ -47,11 +47,7 @@
                     
                     
                 <h4>Chi tiết sản phẩm</h4>
-                <span>Áo thun Gildan Ultra Cotton được làm từ 6,0 oz đáng kể. trên mỗi mét vuông yd.
-                     vải được làm từ 100% cotton, chiếc áo sơ mi dệt kim co rút trước vừa vặn cổ điển 
-                     này mang đến sự thoải mái chưa từng có trong mỗi lần mặc. Nổi bật với cổ và vai được dán băng dính, 
-                     cổ áo hai kim liền mạch và có sẵn nhiều màu sắc, chiếc áo này cung cấp tất cả những điều đó trong một gói sản phẩm 
-                     tuyệt vời nhất</span>
+                <span><?=$mota?></span>
             </div>
         </section>
 
