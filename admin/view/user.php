@@ -12,10 +12,10 @@
                             <th>Tên đăng nhập</th>
                             <th>Mật khẩu</th>
                             <th>Họ và tên</th>
-                            <th>Địa chỉ </th>
-                            <th>Email</th>
+                            <th>Địa chỉ</th>
                             <th>Điện thoại</th>
-                        
+                            <th>Email</th>
+                            <th>Role</th> 
                         </tr>
                     </thead>
                     <?php
@@ -30,25 +30,20 @@ foreach ($kq as $user) {
     <td>'.$user['diachi'].'</td>
     <td>'.$user['email'].'</td>
     <td>'.$user['dienthoai'].'</td>
+    <td>'.$user['role'].'</td>
     
 
     <td>
-        <a href="#" class="btn btn-warning"><i
+        <a href="index.php?pg=useredit&id='.$user['id'].'" class="btn btn-warning"><i
                 class="fa-solid fa-pen-to-square"></i> Sửa</a>
                 <a href="index.php?pg=deluser&id='.$user['id'].'" class="btn btn-danger"><i
-                class="fa-solid fa-trash"></i> Xóa</a>
-    
-    
+                class="fa-solid fa-trash"></i> Xóa</a>   
+    </td>
     </tr>';
     $i++;
 }
  }
-?>
-                        
-                        
-                        
-                    
-                   
+?>                
                 </table>
             </div>
         </div>

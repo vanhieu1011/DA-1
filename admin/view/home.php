@@ -1,6 +1,6 @@
 <div class="main-content">
                 <h3 class="title-page">
-                    Dashboards
+                    DASH BOARD
                 </h3>
                 <section class="statistics row">
                     <div class="col-sm-12 col-md-6 col-xl-3">
