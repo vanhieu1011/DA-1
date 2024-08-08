@@ -3,13 +3,16 @@
         extract($_SESSION['s_user']);
         $html_account='
         
-        <li><a href="index.php?pg=myaccount">'.$ten.'</a></a></li>
+        <li><a href="admin/">'.$ten.'</a></li>
+        <li><a href="index.php?pg=myaccount">Thông Tin Tài Khoản</a></li>
+        <li><a href="index.php?pg=logout">Đăng Xuất</a></li>
+        
         ' ;
        
        
     }else{
         $html_account='
-        <li><a href="index.php?pg=dangnhap"><img src="LAYOUT/img/user.png" alt="" width="30px"></a></li>';
+        <li><a href="index.php?pg=dangnhap"><img src="LAYOUT/img/people/user.jpg" alt="" width="30px"></a></li>';
     }
 ?>
 
@@ -45,6 +48,12 @@
                     <li><a href="index.php?pg=gioithieu">Giới thiệu</a></li>
                      <li><a href="#">Liên hệ</a></li>
                     <!--<li><a href="index.php?pg=dangnhap">Đăng nhập</a></li> -->
+
+                    <div id="mobile">
+                        <a href="index.php?pg=viewcart"><i class="fa-solid fa-bag-shopping"></i></a>
+                        <i id="bar" class="fas fa-outdent"></i> <!-- icon cho menu cho mobile -->
+                    </div>
+                    
                     <div class="alo">
                     <li id="lg-bag" ><a href="index.php?pg=viewcart" ><i class="fa-solid fa-bag-shopping" style="font-size: 30px;";></i></a></li>
                     <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>                         
@@ -54,10 +63,7 @@
                 
                 </ul>
             </div>
-            <div id="mobile">
-                <a href="index.php?pg=viewcart"><i class="fa-solid fa-bag-shopping"></i></a>
-                <i id="bar" class="fas fa-outdent"></i> <!-- icon cho menu cho mobile -->
-            </div>
+            
         </section>
         
 

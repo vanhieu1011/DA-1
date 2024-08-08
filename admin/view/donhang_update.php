@@ -2,11 +2,21 @@
 // Bao gồm tệp kết nối cơ sở dữ liệu
 include 'D:/xampp/htdocs/DA-1/DAO/pdo.php';
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+$id = $_GET['id'] ?? null;
+$donhang = null;
 
+if ($id) {
     // Lấy thông tin đơn hàng từ CSDL
     $donhang = pdo_query_one("SELECT * FROM bill WHERE id = ?", $id);
+
+    // Kiểm tra nếu đơn hàng không tồn tại
+    if (!$donhang) {
+        echo "<div class='alert alert-danger'>Đơn hàng không tồn tại!</div>";
+        exit;
+    }
+} else {
+    echo "<div class='alert alert-danger'>ID đơn hàng không hợp lệ!</div>";
+    exit;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -51,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $voucher, 
             $tongthanhtoan, 
             $pttt, 
-            $id // Đảm bảo biến $id được truyền vào ở đây
+            $id
         );
         echo "<div class='alert alert-success'>Cập nhật thành công</div>";
     } catch (PDOException $e) {
@@ -74,47 +84,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="" method="POST">
             <div class="mb-3">
                 <label for="nguoidat_ten" class="form-label">Tên người đặt</label>
-                <input type="text" class="form-control" id="nguoidat_ten" name="nguoidat_ten" value="<?php echo isset($donhang['nguoidat_ten']) ? htmlspecialchars($donhang['nguoidat_ten']) : ''; ?>" required>
+                <input type="text" class="form-control" id="nguoidat_ten" name="nguoidat_ten" value="<?php echo htmlspecialchars($donhang['nguoidat_ten']); ?>" required>
             </div>
             <div class="mb-3">
                 <label for="nguoidat_email" class="form-label">Email người đặt</label>
-                <input type="email" class="form-control" id="nguoidat_email" name="nguoidat_email" value="<?php echo isset($donhang['nguoidat_email']) ? htmlspecialchars($donhang['nguoidat_email']) : ''; ?>" required>
+                <input type="email" class="form-control" id="nguoidat_email" name="nguoidat_email" value="<?php echo htmlspecialchars($donhang['nguoidat_email']); ?>" required>
             </div>
             <div class="mb-3">
                 <label for="nguoidat_tel" class="form-label">SĐT người đặt</label>
-                <input type="text" class="form-control" id="nguoidat_tel" name="nguoidat_tel" value="<?php echo isset($donhang['nguoidat_tel']) ? htmlspecialchars($donhang['nguoidat_tel']) : ''; ?>" required>
+                <input type="text" class="form-control" id="nguoidat_tel" name="nguoidat_tel" value="<?php echo htmlspecialchars($donhang['nguoidat_tel']); ?>" required>
             </div>
             <div class="mb-3">
                 <label for="nguoidat_diachi" class="form-label">Địa chỉ người đặt</label>
-                <input type="text" class="form-control" id="nguoidat_diachi" name="nguoidat_diachi" value="<?php echo isset($donhang['nguoidat_diachi']) ? htmlspecialchars($donhang['nguoidat_diachi']) : ''; ?>" required>
+                <input type="text" class="form-control" id="nguoidat_diachi" name="nguoidat_diachi" value="<?php echo htmlspecialchars($donhang['nguoidat_diachi']); ?>" required>
             </div>
             <div class="mb-3">
                 <label for="nguoinhan_ten" class="form-label">Tên người nhận</label>
-                <input type="text" class="form-control" id="nguoinhan_ten" name="nguoinhan_ten" value="<?php echo isset($donhang['nguoinhan_ten']) ? htmlspecialchars($donhang['nguoinhan_ten']) : ''; ?>" required>
+                <input type="text" class="form-control" id="nguoinhan_ten" name="nguoinhan_ten" value="<?php echo htmlspecialchars($donhang['nguoinhan_ten']); ?>" required>
             </div>
             <div class="mb-3">
                 <label for="nguoinhan_diachi" class="form-label">Địa chỉ người nhận</label>
-                <input type="text" class="form-control" id="nguoinhan_diachi" name="nguoinhan_diachi" value="<?php echo isset($donhang['nguoinhan_diachi']) ? htmlspecialchars($donhang['nguoinhan_diachi']) : ''; ?>" required>
+                <input type="text" class="form-control" id="nguoinhan_diachi" name="nguoinhan_diachi" value="<?php echo htmlspecialchars($donhang['nguoinhan_diachi']); ?>" required>
             </div>
             <div class="mb-3">
                 <label for="nguoinhan_tel" class="form-label">SĐT người nhận</label>
-                <input type="text" class="form-control" id="nguoinhan_tel" name="nguoinhan_tel" value="<?php echo isset($donhang['nguoinhan_tel']) ? htmlspecialchars($donhang['nguoinhan_tel']) : ''; ?>" required>
+                <input type="text" class="form-control" id="nguoinhan_tel" name="nguoinhan_tel" value="<?php echo htmlspecialchars($donhang['nguoinhan_tel']); ?>" required>
             </div>
             <div class="mb-3">
                 <label for="ship" class="form-label">SHIP</label>
-                <input type="text" class="form-control" id="ship" name="ship" value="<?php echo isset($donhang['ship']) ? htmlspecialchars($donhang['ship']) : ''; ?>" required>
+                <input type="text" class="form-control" id="ship" name="ship" value="<?php echo htmlspecialchars($donhang['ship']); ?>" required>
             </div>
             <div class="mb-3">
                 <label for="voucher" class="form-label">Voucher</label>
-                <input type="text" class="form-control" id="voucher" name="voucher" value="<?php echo isset($donhang['voucher']) ? htmlspecialchars($donhang['voucher']) : ''; ?>" required>
+                <input type="text" class="form-control" id="voucher" name="voucher" value="<?php echo htmlspecialchars($donhang['voucher']); ?>" required>
             </div>
             <div class="mb-3">
                 <label for="tongthanhtoan" class="form-label">Tổng thanh toán</label>
-                <input type="text" class="form-control" id="tongthanhtoan" name="tongthanhtoan" value="<?php echo isset($donhang['tongthanhtoan']) ? htmlspecialchars($donhang['tongthanhtoan']) : ''; ?>" required>
+                <input type="text" class="form-control" id="tongthanhtoan" name="tongthanhtoan" value="<?php echo htmlspecialchars($donhang['tongthanhtoan']); ?>" required>
             </div>
             <div class="mb-3">
                 <label for="pttt" class="form-label">Phương thức thanh toán</label>
-                <input type="text" class="form-control" id="pttt" name="pttt" value="<?php echo isset($donhang['pttt']) ? htmlspecialchars($donhang['pttt']) : ''; ?>" required>
+                <input type="text" class="form-control" id="pttt" name="pttt" value="<?php echo htmlspecialchars($donhang['pttt']); ?>" required>
             </div>
             <button type="submit" class="btn btn-primary">Cập nhật</button>
         </form>

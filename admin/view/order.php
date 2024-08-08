@@ -23,7 +23,7 @@
                         </tr>
                     </thead>
                     <?php
-                    if(isset($kq)&&(count($kq)>1)){
+                    if(isset($kq) && is_array($kq) && count($kq) > 0){
     $i=1;
 foreach ($kq as $donhang) {
     echo '<tr>
@@ -46,8 +46,9 @@ foreach ($kq as $donhang) {
 
     <td>
         <a href="index.php?pg=donhang_update.php&id='.$donhang['id'].'" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Sửa</a>
-        <a href="='.$donhang['id'].'" class="btn btn-danger"><i
-        class="fa-solid fa-trash"></i> Xóa</a>
+        <a href="index.php?pg=donhang_delete.php&id='.$donhang['id'].'" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Xóa</a>
+
+
     
     
     </tr>';
